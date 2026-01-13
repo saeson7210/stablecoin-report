@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<script src="stablecoin_presentation_files/libs/clipboard/clipboard.min.js"></script>
+<script src="stablecoin_presentation_files/libs/quarto-html/tabby.min.js"></script>
+<script src="stablecoin_presentation_files/libs/quarto-html/popper.min.js"></script>
+<script src="stablecoin_presentation_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="stablecoin_presentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="stablecoin_presentation_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="stablecoin_presentation_files/libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
+
+  <meta name="author" content="Gemini AI 전략기획팀">
+  <meta name="dcterms.date" content="2026-01-12">
+  <title>핀테크 서비스를 위한 스테이블 코인 도입 전략</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="stablecoin_presentation_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="stablecoin_presentation_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="stablecoin_presentation_files/libs/revealjs/dist/theme/quarto-c2870a8b1a64cb49d1e11a39b9ea3b27.css">
+  <link href="stablecoin_presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="stablecoin_presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="stablecoin_presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="stablecoin_presentation_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body, .reveal, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+      font-family: 'Noto Sans KR', sans-serif !important;
+    }
+    .reveal h1 {
+      font-weight: 700;
+      font-size: 2.0em !important;
+      line-height: 1.3 !important;
+    }
+    .reveal h2 {
+      font-weight: 700;
+    }
+    /* 내용을 축소하기 위한 유틸리티 클래스 */
+    .small-font {
+      font-size: 0.8em !important;
+    }
+    .x-small-font {
+      font-size: 0.65em !important;
+    }
+    /* 테이블 헤더 색상 조정 */
+    .reveal table th {
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">핀테크 서비스를 위한<br>스테이블 코인 도입 전략</h1>
+  <p class="subtitle">Global Payments Strategy 2026</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Gemini AI 전략기획팀 
+</div>
+</div>
+</div>
+
+  <p class="date">2026-01-12</p>
+</section>
+<section id="executive-summary" class="slide level2 center" data-background-color="#191919">
+<h2>Executive Summary</h2>
+<p><strong>“Tokenized Cash: The Future of Global Payments”</strong></p>
+<p>2026년, 글로벌 금융 인프라의 중심은 <strong>스테이블 코인</strong>으로 이동했습니다. A사의 경쟁 우위 확보를 위해 <strong>USDC 중심의 하이브리드 결제망</strong> 도입을 제안합니다.</p>
+<ul>
+<li class="fragment"><strong>🚀 Market Explosion</strong>: 시가총액 <strong>$2,500억 (330조 원)</strong> 돌파, 연간 거래액 <strong>26조 달러</strong> (Visa+Mastercard 추월).</li>
+<li class="fragment"><strong>⚖️ Regulatory Clarity</strong>: 미국 <strong>GENIUS Act (2025.07)</strong> 발효로 불확실성 해소 및 제도권 편입.</li>
+<li class="fragment"><strong>🛡️ Strategic Core</strong>: <strong>USDC</strong>를 핵심 결제 수단(Core Settlement Asset)으로 채택하여 규제 리스크 원천 차단.</li>
+<li class="fragment"><strong>💰 Cost Efficiency</strong>: 기존 SWIFT 대비 수수료 <strong>80% 절감</strong> 및 <strong>T+0 실시간 정산</strong> 실현.</li>
+</ul>
+</section>
+<section id="why-now-시장-및-규제-환경의-변화" class="slide level2 center">
+<h2>Why Now? 시장 및 규제 환경의 변화</h2>
+<div class="small-font">
+<div class="columns">
+<div class="column" style="width: 40%; padding-right: 5px;">
+<h3 style="font-size: 1.1em;" id="market-b2b-결제의-혁명">1. Market: B2B 결제의 혁명</h3>
+<ul>
+<li><strong>단순 트레이딩 📉 ➡️ 실물 경제 결제 📈</strong>
+<ul>
+<li>전체 거래의 40% 이상이 B2B 결제 및 국경 간 송금.</li>
+<li>2026년 현재, 스테이블 코인은 ’가상 자산’이 아닌 <strong>‘디지털 현금’</strong>으로 기능.</li>
+<li>기존 금융망(Legacy) 대비 비용 효율성 압도적 우위.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width: 40%; padding-left: 5px;">
+<h3 style="font-size: 1.1em;" id="regulation-제도의-양지陽地">2. Regulation: 제도의 양지(陽地)</h3>
+<ul>
+<li><strong>🇺🇸 GENIUS Act (2025)</strong>:
+<ul>
+<li>발행사의 <strong>100% 현금/단기 국채 보유</strong> 의무화.</li>
+<li>알고리즘 코인 퇴출 및 연방 감독 명문화.</li>
+</ul></li>
+<li><strong>🇪🇺 MiCA</strong>:
+<ul>
+<li>유럽 내 비유로(Non-Euro) 코인 거래 한도 설정.</li>
+<li>규제 준수 여부가 비즈니스 지속성의 핵심 척도.</li>
+</ul></li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="comparative-analysis-3대-코인-정밀-비교" class="slide level2 center">
+<h2>Comparative Analysis: 3대 코인 정밀 비교</h2>
+<p>BCG의 <strong>‘5 Killer Tests’</strong> 프레임워크 기반 분석 결과, <strong>USDC</strong>가 유일한 대안입니다.</p>
+<div class="small-font">
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">평가 지표</th>
+<th style="text-align: left;"><strong>USDC (Circle)</strong></th>
+<th style="text-align: left;"><strong>USDT (Tether)</strong></th>
+<th style="text-align: left;"><strong>DAI (Maker)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>1. Regulation</strong><br>(규제 적합성)</td>
+<td style="text-align: left;"><strong>✅ 최우수 (Best)</strong><br>GENIUS Act 완벽 준수.<br>미국 송금업 라이선스 보유.</td>
+<td style="text-align: left;"><strong>⚠️ 미흡</strong><br>역외(Off-shore) 규제 기반.<br>미국 내 제도권 거래 제한.</td>
+<td style="text-align: left;"><strong>❓ 불확실</strong><br>탈중앙화 구조로 규제<br>적용 대상 모호.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>2. Stability</strong><br>(자산 건전성)</td>
+<td style="text-align: left;"><strong>🔒 100% 현금/국채</strong><br>BlackRock 관리, 매월 감사.</td>
+<td style="text-align: left;"><strong>📉 복합 자산</strong><br>기업어음/BTC 포함 (변동성).</td>
+<td style="text-align: left;"><strong>⚠️ 초과 담보</strong><br>담보 가치 하락 시 청산 위험.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>3. Utility</strong><br>(활용도)</td>
+<td style="text-align: left;"><strong>🏦 기관/선진국</strong><br>CCTP 등 기술적 통합 우수.</td>
+<td style="text-align: left;"><strong>🌏 신흥국/P2P</strong><br>전 세계적 유동성 압도적.</td>
+<td style="text-align: left;"><strong>🔗 DeFi</strong><br>이더리움 생태계 국한.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="strategic-proposal-hybrid-model" class="slide level2 center">
+<h2>Strategic Proposal: Hybrid Model</h2>
+<p><strong>“규제 준수(Compliance)와 유동성(Liquidity)의 딜레마 해결”</strong></p>
+<p>A사는 <strong>USDC를 메인</strong>으로 하되, 신흥국 시장을 위해 <strong>USDT를 보조</strong>로 활용하는 <strong>Two-Track 전략</strong>을 수립해야 합니다.</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">1. Core Layer (USDC)</a></li><li><a href="#tabset-1-2">2. Routing Layer (Smart Swap)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<ul>
+<li><strong>역할</strong>: 회사의 메인 트레저리(Treasury) 및 선진국(미국/유럽) 송금망.</li>
+<li><strong>운용</strong>: 모든 고객 예치금은 100% USDC로 변환하여 보관 (자산 안전성 보장).</li>
+<li><strong>네트워크</strong>: Solana 및 Base 체인 활용 (저비용, 고속 처리).</li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li><strong>역할</strong>: USDT 유동성이 풍부한 아시아/남미/아프리카 송금 시 활용.</li>
+<li><strong>메커니즘</strong>: 전송 직전 <strong>[USDC ➡️ USDT]</strong> 자동 스왑(Auto-Swap) 후 수취인에게 전달.</li>
+<li><strong>효과</strong>: 회사는 USDT 보유 리스크를 지지 않으면서도 현지 수요 충족 가능.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="technical-architecture" class="slide level2 center">
+<h2>Technical Architecture</h2>
+<ul>
+<li><strong>User Request</strong>: 사용자 송금 요청 (Fiat 입금).</li>
+<li><strong>Conversion</strong>: 즉시 USDC로 변환 및 Treasury 보관.</li>
+<li><strong>Optimal Routing</strong>: 목적지 국가에 따라 경로 자동 선택 (Direct USDC 전송 vs USDT Swap 전송).</li>
+<li><strong>Settlement</strong>: 수취인은 현지 파트너(OTC)를 통해 즉시 현지 통화 수령.</li>
+</ul>
+</section>
+<section id="implementation-roadmap-2026" class="slide level2 center">
+<h2>Implementation Roadmap (2026)</h2>
+<p>단계적 도입을 통해 리스크를 통제하며 글로벌 확장을 추진합니다.</p>
+<div class="x-small-font">
+<table class="caption-top">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Phase</th>
+<th style="text-align: left;">기간</th>
+<th style="text-align: left;">목표 시장</th>
+<th style="text-align: left;">핵심 실행 과제 (Action Items)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Phase 1</strong><br>(Pilot)</td>
+<td style="text-align: left;"><strong>Q1 2026</strong></td>
+<td style="text-align: left;">🇰🇷 한국 &lt;-&gt; 🇺🇸 미국<br>(단일 경로)</td>
+<td style="text-align: left;">• Circle <strong>Enterprise Account</strong> 개설<br>• Solana 기반 <strong>USDC 결제망</strong> 연동 테스트<br>• 내부 회계/정산 시스템 통합</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Phase 2</strong><br>(Expansion)</td>
+<td style="text-align: left;"><strong>Q2 2026</strong></td>
+<td style="text-align: left;">🇻🇳 🇹🇭 🇵🇭 동남아<br>(3개국 확장)</td>
+<td style="text-align: left;">• 유동성 공급자(<strong>Wintermute</strong> 등) 파트너십 체결<br>• <strong>USDC-USDT 자동 스왑 엔진</strong> 가동<br>• 현지 주요 OTC 업체 네트워크 연결</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Phase 3</strong><br>(Scale-up)</td>
+<td style="text-align: left;"><strong>Q3 2026~</strong></td>
+<td style="text-align: left;">🇪🇺 유럽 및 전 세계<br>(Global)</td>
+<td style="text-align: left;">• <strong>EURC (유로 코인)</strong> 도입으로 MiCA 규제 대응<br>• B2B 대량 급여 지급(Payroll) 서비스 런칭<br>• 글로벌 자금 통합 관리 시스템(CMS) 고도화</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="risk-management-protocol" class="slide level2 center">
+<h2>Risk Management Protocol</h2>
+<p>예상되는 리스크에 대한 <strong>기술적/운영적 방어책(Shield)</strong>이 마련되어 있습니다.</p>
+<ol type="1">
+<li class="fragment"><strong>🚨 De-pegging (가격 괴리) 리스크</strong>
+<ul>
+<li class="fragment"><strong>대응</strong>: 실시간 모니터링 시스템 구축. 가격이 <strong>$0.995</strong> 미만으로 하락 시 <strong>Kill Switch</strong> 가동 ➡️ 거래 즉시 중단 및 Fiat(법정화폐) 채널로 자동 우회.</li>
+</ul></li>
+<li class="fragment"><strong>🚫 Sanctions (규제/제재) 리스크</strong>
+<ul>
+<li class="fragment"><strong>대응</strong>: <strong>Chainalysis</strong> 솔루션 도입. OFAC 제재 리스트에 포함된 지갑과의 상호작용을 트랜잭션 생성 단계에서 <strong>사전 차단 (KYT)</strong>.</li>
+</ul></li>
+<li class="fragment"><strong>🔐 Security (보안/해킹) 리스크</strong>
+<ul>
+<li class="fragment"><strong>대응</strong>: 단일 관리자 리스크 제거를 위한 <strong>3-of-5 다중 서명(Multi-sig)</strong> 지갑(Gnosis Safe) 운영. 콜드 월렛(Cold Wallet) 분산 보관 원칙 준수.</li>
+</ul></li>
+</ol>
+</section>
+<section id="conclusion-decision" class="slide level2 center">
+<h2>Conclusion &amp; Decision</h2>
+<p><strong>“The Era of Tokenized Cash is Here”</strong></p>
+<p>A사의 스테이블 코인 도입은 단순한 비용 절감을 넘어, <strong>‘글로벌 실시간 금융 네트워크’</strong>로 진입하는 필수적인 과정입니다.</p>
+<h3 id="key-takeaways">✅ Key Takeaways</h3>
+<ol type="1">
+<li><strong>USDC 중심</strong>의 포트폴리오로 규제 불확실성 완전 해소.</li>
+<li><strong>하이브리드 라우팅</strong>으로 글로벌 유동성 커버리지 확보.</li>
+<li><strong>단계적 로드맵</strong>을 통한 안정적 시스템 구축.</li>
+</ol>
+<p><strong>📌 Request for Decision</strong>: <strong>Phase 1 (Pilot Project)</strong> 착수를 위한 승인을 요청드립니다.</p>
+</section>
+<section id="qa" class="slide level2 center">
+<h2>Q&amp;A</h2>
+<p><strong>Thank You</strong></p>
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>2026 Strategic Roadmap | Confidential</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="stablecoin_presentation_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="stablecoin_presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="stablecoin_presentation_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="stablecoin_presentation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="stablecoin_presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="stablecoin_presentation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="stablecoin_presentation_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="stablecoin_presentation_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="stablecoin_presentation_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="stablecoin_presentation_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': true,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "복사완료!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "복사완료!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
